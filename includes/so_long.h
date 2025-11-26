@@ -1,26 +1,20 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.c                                             :+:      :+:    :+:   */
+/*   so_long.h                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jsantini <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/11/25 11:35:09 by jsantini          #+#    #+#             */
-/*   Updated: 2025/11/25 11:37:25 by jsantini         ###   ########.fr       */
+/*   Created: 2025/11/25 11:37:50 by jsantini          #+#    #+#             */
+/*   Updated: 2025/11/26 16:03:28 by jsantini         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "so_long.h"
+#ifndef SO_LONG_H
+# define SO_LONG_H
 
-int	main(int argc, char **argv)
-{
-	(void)argc;
-	(void)argv;
-	void	*mlx;
-	void	*mlx_win;
+# include "../libft/libft.h"
+# include <mlx.h>
 
-	mlx = mlx_init();
-	mlx_win = mlx_new_window(mlx, 1920, 1080, "Hello world!");
-	mlx_loop(mlx);
-	return (0);
-}
+
+#endif
