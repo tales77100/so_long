@@ -15,9 +15,12 @@
 
 int	close_w(int keycode, t_vars *vars)
 {
+	ft_printf("%d\n", keycode);
 	if (keycode == 65307)
+	{
 		mlx_destroy_window(vars->mlx, vars->win);
-	exit(1);
+		exit(1);
+	}
 	return (0);
 }
 
@@ -53,14 +56,14 @@ int	main(void)
 	
 	x = 0;
 	y = 0;
-	while (x < 10)
-		my_mlx_pixel_put(&img, x++, y, 0x00FF0000);
-	while (y < 10)
-		my_mlx_pixel_put(&img, x, y++, 0x00FF0000);
+	while (x < 100)
+		my_mlx_pixel_put(&img, x++, y, 0x00FFFF00);
+	while (y < 100)
+		my_mlx_pixel_put(&img, x, y++, 0x00FFFFFF);
 	while (x > 0)
-		my_mlx_pixel_put(&img, x--, y, 0x00FF0000);
+		my_mlx_pixel_put(&img, x--, y, 0x00FFFF00);
 	while (y > 0)
-		my_mlx_pixel_put(&img, x, y--, 0x00FF0000);
+		my_mlx_pixel_put(&img, x, y--, 0x00FFFF00);
 	mlx_put_image_to_window(vars.mlx, vars.win, img.img, 0, 0);
 	mlx_hook(vars.win, 2, 1L<<0, close_w, &vars);
 	mlx_hook(vars.win, 17, 0, close_w_cross, &vars);
